@@ -1,0 +1,136 @@
+
+/* Phones */
+@media only screen and (max-width: 768px) {
+
+    .fntswht {
+
+        font-family: sans-serif;
+        color: white;
+        border: 10px solid white;
+        border-radius: 30px;
+    
+    }
+
+    #body{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(5, 1fr);
+    }
+
+    #bx1 {
+        background-color: #740001;
+        grid-column: 1/5;
+        grid-row: 1 / 2;
+
+
+    }
+    #bx2 {
+        background-color: #1A472A;
+        grid-column: 1/5;
+        grid-row: 2 / 3;
+        
+    }
+    #bx3 {
+        background-color: #0E1A40;
+        grid-column: 1/5;
+        grid-row: 3/ 4;
+    }
+    #bx4 {
+        background-color: #FFDB00;
+        grid-column: 1/5;
+        grid-row: 4 / 5;
+    }
+    #bx5{
+        background-color: #000000;
+        grid-column: 1/5;
+        grid-row: 5 / 6;
+    }
+}
+
+/* Tablets */
+@media only screen and (min-width: 768px) {
+
+    .fntswht {
+
+        font-family: sans-serif;
+        color: white;
+        border: 10px solid white;
+        border-radius: 30px;
+    
+    }
+
+    #body{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        /* grid-template-rows: auto; */
+    }
+
+    #bx1 {
+        background-color: #740001;
+        grid-column: 1/5;
+        grid-row: 1 / 2;
+    }
+    #bx2 {
+        background-color: #1A472A;
+        grid-column: 1/2;
+        grid-row: 2/3;
+        
+    }
+    #bx3 {
+        background-color: #0E1A40;
+        grid-column: 2/5;
+
+    }
+    #bx4 {
+        background-color: #FFDB00;
+        grid-column: 1/5;
+    }
+    #bx5{
+        background-color: #000000;
+        grid-column: 1/5;
+    }
+}
+
+
+/* Laptops */
+@media only screen and (min-width: 1400px) {
+
+    .fntswht {
+
+        font-family: sans-serif;
+        color: white;
+        border: 10px solid white;
+        border-radius: 30px;
+    
+    }
+
+    #body{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(5, 1fr);
+    }
+
+    #bx1 {
+        background-color: #740001;
+        grid-column: 1/5;
+
+    }
+    #bx2 {
+        background-color: #1A472A;
+        grid-column: 1/2;
+        
+    }
+    #bx3 {
+        background-color: #0E1A40;
+        grid-column: 2/4;
+
+    }
+    #bx4 {
+        background-color: #FFDB00;
+        grid-column: 4/5;
+        grid-row:2/3;
+    }
+    #bx5{
+        background-color: #000000;
+    }
+}
