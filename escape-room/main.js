@@ -9,9 +9,7 @@ while (true) {
   game();
 }
 
-function victory() {
 
-}
 
 function defeat() {
 
@@ -44,5 +42,37 @@ function game() {
     default:
         console.log("Please enter '1', '2', or '3' \n Choice: ")
   }
-
 }
+
+  function victory() {
+    let repeat = readLineSync.question("Congratulations! \n You've made it out of the Escape Room! \n Play again? \n 1) Yes \n 2) No");
+    switch (repeat) {
+        case "1":
+            game();
+            break;
+        case "2":
+            console.log("Goodbye!");
+            break;
+        default:
+            console.log("Please enter either '1' or '2'");
+            victory();
+            break;
+    }
+  }
+
+    function defeat() {
+    let repeat = readLineSync.question("Game Over \n You died! \n Play again? \n 1) Yes \n 2) No");
+    switch (repeat) {
+        case "1":
+            game();
+            break;
+        case "2":
+            console.log("Goodbye!");
+            break;
+        default:
+            console.log("Please enter either '1' or '2'");
+            defeat();
+            break;
+    }
+  }
+
