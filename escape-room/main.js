@@ -1,18 +1,14 @@
 var readLineSync = require("readline-sync");
+var isGamerunning = true;
+var key = 0;
 
 var user = readLineSync.question("Hello, what is your name? ");
 console.log(
   `Hey there, ${user} welcome to Escape Room. Your job is to escape the room!`
 );
 
-while (true) {
+while (isGamerunning) {
   game();
-}
-
-
-
-function defeat() {
-
 }
 
 function game() {
@@ -22,7 +18,7 @@ function game() {
 
   switch (choice) {
     case "1":
-      if ((key = 0)) {
+      if ((key === 0)) {
         console.log("You found the key.");
         key = 1;
       } else {
@@ -30,14 +26,15 @@ function game() {
       }
       break;
     case "2":
-      if ((key = 0)) {
+      if ((key === 0)) {
         console.log("It's locked.");
-      } else if ((key = 1)) {
+      } else if ((key === 1)) {
         victory();
       }
       break;
     case "3":
         defeat();
+
     break;
     default:
         console.log("Please enter '1', '2', or '3' \n Choice: ")
@@ -52,6 +49,7 @@ function game() {
             break;
         case "2":
             console.log("Goodbye!");
+            isGamerunning = false;
             break;
         default:
             console.log("Please enter either '1' or '2'");
@@ -68,6 +66,7 @@ function game() {
             break;
         case "2":
             console.log("Goodbye!");
+            isGamerunning = false;
             break;
         default:
             console.log("Please enter either '1' or '2'");
