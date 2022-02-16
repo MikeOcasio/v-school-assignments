@@ -14,7 +14,7 @@ var officeItems = [
 for (i = 0; i <= officeItems.length; i++){
 
     if (officeItems[i] === "computer"){
-        console.log()
+        console.log(officeItems[i])
     }
 
 };
@@ -47,4 +47,29 @@ var peopleWhoWantToSeeMadMaxFuryRoad = [
   },
 ];
 
+let minAge = 18;
 
+for (let i = 0; i < peopleWhoWantToSeeMadMaxFuryRoad.length; i++) {
+  if (peopleWhoWantToSeeMadMaxFuryRoad[i].age < minAge) {
+    console.log(
+      peopleWhoWantToSeeMadMaxFuryRoad[i].name +
+        ":" +
+        " Mad max is to much for your untainted eyes!"
+    );
+  } else
+    console.log(
+      peopleWhoWantToSeeMadMaxFuryRoad[i].name +
+        ":" +
+        " You're old enough.. Do as you please!"
+    );
+  console.log(
+    peopleWhoWantToSeeMadMaxFuryRoad[i].name +
+      "'s gender is " +
+      peopleWhoWantToSeeMadMaxFuryRoad[i].gender +
+      " & " +
+      peopleWhoWantToSeeMadMaxFuryRoad[i].name +
+      "'s age is " +
+      peopleWhoWantToSeeMadMaxFuryRoad[i].age
+  );
+
+}
