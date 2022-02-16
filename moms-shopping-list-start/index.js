@@ -1,22 +1,73 @@
-const form = document.addItem;
-let listItem = document.createElement("li");
-let editButton = document.createElement("button");
-let xButton = document.createElement("button");
+"use_strict";
 
-form.addEventListener("submit", (event) => {
+const form = document["add-item"];
+
+//dynamic list item
+form.addEventListener("submit", function (event) {
   event.preventDefault();
 
-  const item = form.title.value;
-  console.log(item);
-  form.title.value = "";
-
-  listItem.textContent = item;
-  editButton.textContent = "edit";
-  xButton.textContent = "X";
-
-  document.getElementById("list").appendChild(listItem);
-  document.getElementById("list").appendChild(editButton);
-  document.getElementById("list").appendChild(xButton);
-
-
+  createItem(form.input);
 });
+
+//dynamic input button
+function edit(e) {
+  const saveButton = document.createElement("button");
+  saveButton.textContent = "Save";
+  saveButton.setAttribute("name", "save-button");
+  saveButton.setAttribute("class", "saveButton");
+  saveButton.setAttribute("onClick", "save(this);");
+
+  const inputNew = document.createElement("input");
+  inputNew.setAttribute("name", "editItem");
+  inputNew.setAttribute("class", "editItem");
+  inputNew.setAttribute("value", e.parentNode.childNodes[0].nodeValue);
+  console.log(e.parentNode.childNodes);
+
+  e.parentNode.appendChild(saveButton);
+  e.parentNode.appendChild(inputNew);
+  e.remove();
+}
+
+//this will store the data until you refresh the page
+function save(e) {
+  const input = document.getElementsByName("editItem")[0];
+  createItem(input);
+  e.parentNode.remove();
+}
+
+//dynamic edit button
+function createEditButton(e) {
+  const editButton = document.createElement("button");
+  editButton.textContent = "Edit Item";
+  editButton.setAttribute("name", "edit-button");
+  editButton.setAttribute("class", "editButton");
+  editButton.setAttribute("onClick", "edit(this);");
+  e.appendChild(editButton);
+}
+
+//button created dynamically
+function createDeleteButton(e) {
+  const deleteButton = document.createElement("button");
+  deleteButton.textContent = "X";
+  deleteButton.setAttribute("name", "delete-button");
+  deleteButton.setAttribute("class", "deleteButton");
+  deleteButton.setAttribute(
+    "onClick",
+    "this.parentNode.parentNode.removeChild(this.parentNode);"
+  );
+  e.appendChild(deleteButton);
+}
+
+//creates an item using value from the form, clears the form, adds list item with edit and delete buttons
+function createItem(e) {
+  const item = e.value;
+  e.value = "";
+
+  const li = document.createElement("li");
+  li.textContent = item;
+
+  createDeleteButton(li);
+  createEditButton(li);
+
+  document.getElementsByName("item-list")[0].append(li);
+}
