@@ -31,11 +31,6 @@ leftSide.innerText = "Do you like football?";
 let rightSide = document.querySelectorAll(".right");
 rightSide.innerText = "I love football, why do you ask?";
 
-// let leftSide2 = document.querySelectorAll('.left')[1];
-// leftSide2.innerText = 'I have tickets to this weeks game, do you want to join me?';
-
-// let rightSide2 = document.querySelectorAll('.right')[1];
-// rightSide2.innerText = 'Say less, I will have my cooler ready for the tailgate party!';
 
 /* remove nodes from leftSide and rightSide */
 document

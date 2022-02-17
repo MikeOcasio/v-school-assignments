@@ -30,6 +30,7 @@ function edit(e) {
 
 //this will store the data until you refresh the page
 function save(e) {
+
   const input = document.getElementsByName("editItem")[0];
   createItem(input);
   e.parentNode.remove();
@@ -61,7 +62,6 @@ function createDeleteButton(e) {
 //creates an item using value from the form, clears the form, adds list item with edit and delete buttons
 function createItem(e) {
   const item = e.value;
-  e.value = "";
 
   const li = document.createElement("li");
   li.textContent = item;
