@@ -6,6 +6,7 @@ const form = document["add-item"];
 form.addEventListener("submit", function (event) {
   event.preventDefault();
 
+
   createItem(form.input);
 });
 
@@ -62,12 +63,15 @@ function createDeleteButton(e) {
 //creates an item using value from the form, clears the form, adds list item with edit and delete buttons
 function createItem(e) {
   const item = e.value;
+  e.value = "";
 
   const li = document.createElement("li");
   li.textContent = item;
 
   createDeleteButton(li);
   createEditButton(li);
+
+
 
   document.getElementsByName("item-list")[0].append(li);
 }
