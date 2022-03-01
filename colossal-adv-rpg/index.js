@@ -72,7 +72,7 @@ var playerName = readlineSync.question("What is your name? ");
 console.log(
   "Hey there, " +
     playerName +
-    " the goal of the game is to get as far as you can and reach Camelot, the save haven."
+    " the goal of the game is to kill all the monsters and you reach the town."
 );
 
 console.log(divdr);
@@ -112,6 +112,116 @@ function operatorChoice() {
       console.log("You must input 'Y' or 'N' !");
   }
 }
+
+function walk() {
+    const odds = Math.random();
+    if (odds > .5) {
+        console.log('You move closer mto the town.. no monsters are around.');
+    } else {
+        enemyEncounter()
+    }
+}
+
+function enemyEncounter() {
+  if (enemies.length == 0) {
+    console.log(
+      "You did it! You eliminated all the monsters....killing a total of " +
+        newPlayer.playerName +
+        newPlayer.enemyKilled
+    );
+    let end = readlineSync.keyIn("[q] for quit", { limit: "q" });
+    if (end === "q") {
+      process.end;
+    }
+  } else {
+    let newEncounter = enemies[Math.floor(Math.random() * enemies.length)];
+    console.log(
+      "*DANGER* Its " +
+        newEncounter.enemy +
+        " you unsheath you sword and crack your neck, its fight time"
+    );
+    console.log(newEncounter);
+    firstFight(newEncounter);
+  }
+}
+function firstFight(newEncounter) {
+  while (newPlayer.isAlive() && newEncounter.isAlive()) {
+    const fightOptions = readlineSync.keyIn(
+      "[r]Run Away\n[e] Attack\n[u]SportsDrink\n[q]Quit the game",
+      { limit: "reuq" }
+    );
+
+    const chanceOfEscape = Math.random();
+    if (fightOptions === "r") {
+      if (chanceOfEscape > 0.5) {
+        console.log(
+          "The monster throws a snare field, you cant escape.  Check Inventory"
+        );
+        return;
+      } else {
+        enemyAttack(newEncounter);
+      }
+    } else if (fightOptions === "e") {
+      playerAttack(newEncounter);
+      enemyAttack(newEncounter);
+    } else if (fightOptions === "u") {
+      useItem();
+    } else if (fightOptions === "q") {
+      console.log(
+        "You lay down your arms and look up to the sky. The regret of quitting eventually over takes you.. You long for battle once more, you should try again."
+      );
+      process.end;
+    }
+  }
+  if (newPlayer.hp == 0) {
+    console.log(
+      playerName +
+        " you died to " +
+        newEncounter.enemy +
+        ".... better luck next time!"
+    );
+  } else if (newEncounter.hp == 0) {
+    enemyKilled(newEncounter);
+    console.log(
+      newEncounter.enemy +
+        " has been eliminated. You have earned 200 HP as a Reward"
+    );
+    findItem(sportDrink);
+    console.log(
+      "Look, at that " +
+        newEncounter.enemy +
+        " died and dropped this item for you, you earned a sports drink worth 200hp!" +
+        sportDrink.item
+    );
+  }
+}
+/* Take damage with enemy strike attack hp */
+function enemyAttack(newEncounter) {
+  newPlayer.reduceHP(Math.floor(Math.random() * newEncounter.ap));
+  console.log(
+    "Ouch, Your Taking Damage" +
+      newEncounter.enemy +
+      " hp remaining: " +
+      newPlayer.hp
+  );
+}
+function playerAttack(newEncounter) {
+  newEncounter.reduceHP(Math.floor(Math.random() * newPlayer.ap + 50));
+  console.log(
+    "You are showing off now " +
+      newEncounter.enemy +
+      " HP remaining: " +
+      newEncounter.hp
+  );
+}
+/* reward for killing enemyEncounter */
+function enemyKilled(newEncounter) {
+  let encounterSP = enemies.indexOf(newEncounter);
+  enemies.splice(encounterSP, 1);
+  newPlayer.hp += 100;
+  newPlayer.enemyKilled++;
+}
+
 while (newPlayer.isAlive()) {
   const commands = readlineSync.keyIn(
     "[w]Walk\n[i]Inventory\n[u]Use Item\n[q]Quit Game\n",
