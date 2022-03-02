@@ -38,6 +38,10 @@ function findItem(elixir) {
   newPlayer.inventory.push(elixir);
 }
 
+function showInventory() {
+  console.log(newPlayer);
+}
+
 function useItem() {
   if (newPlayer.inventory.length == 0) {
     console.log(
@@ -207,12 +211,12 @@ function firstFight(newEncounter) {
       newEncounter.enemy +
         " has been eliminated. You take the rest of the day to rest and recover gaining 200hp"
     );
-    findItem(sportDrink);
+    findItem(elixir);
     console.log(
       "AS you plunge your sword into its heart the " +
         newEncounter.enemy +
-        " dies and drops an item for you, its an elixer worth 200hp" +
-        sportDrink.item
+        " dies and drops an item for you, its an elixir worth 200hp" +
+        elixir.item
     );
   }
 }
