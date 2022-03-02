@@ -32,6 +32,25 @@ class Inventory {
   }
 }
 
+const elixir = new Inventory("Elixir", 175);
+
+function findItem(elixir) {
+  newPlayer.inventory.push(elixir);
+}
+
+function useItem() {
+  if (newPlayer.inventory.length == 0) {
+    console.log(
+      "You search your pouch, but there is nothing there., You must deafeat an enemy to collects items they drop."
+    );
+  } else {
+    newPlayer.hp += 200;
+    console.log("You added 200HP");
+
+    newPlayer.inventory.shift();
+  }
+}
+
 class Enemies {
   constructor(enemy, hp, ap) {
     this.enemy = enemy;
@@ -61,6 +80,8 @@ let enemies = [
   lesserKnight,
   greaterKnight,
 ];
+
+
 
 
 
@@ -116,7 +137,7 @@ function operatorChoice() {
 function walk() {
     const odds = Math.random();
     if (odds > .5) {
-        console.log('You move closer mto the town.. no monsters are around.');
+        console.log('You move closer to the town.. no monsters are around.');
     } else {
         enemyEncounter()
     }
@@ -138,7 +159,7 @@ function enemyEncounter() {
     console.log(
       "*DANGER* Its " +
         newEncounter.enemy +
-        " you unsheath you sword and crack your neck, its fight time"
+        " you unsheath you sword and crack your neck, its fight time.."
     );
     console.log(newEncounter);
     firstFight(newEncounter);
@@ -147,7 +168,7 @@ function enemyEncounter() {
 function firstFight(newEncounter) {
   while (newPlayer.isAlive() && newEncounter.isAlive()) {
     const fightOptions = readlineSync.keyIn(
-      "[r]Run Away\n[e] Attack\n[u]SportsDrink\n[q]Quit the game",
+      "[r]Run Away\n[e] Attack\n[u]Elixir\n[q]Quit the game",
       { limit: "reuq" }
     );
 
@@ -155,7 +176,7 @@ function firstFight(newEncounter) {
     if (fightOptions === "r") {
       if (chanceOfEscape > 0.5) {
         console.log(
-          "The monster throws a snare field, you cant escape.  Check Inventory"
+          "The monster throws a snare field, you cant escape.  If you have an item in your inventory it may be the appropriate time to use it."
         );
         return;
       } else {
@@ -184,13 +205,13 @@ function firstFight(newEncounter) {
     enemyKilled(newEncounter);
     console.log(
       newEncounter.enemy +
-        " has been eliminated. You have earned 200 HP as a Reward"
+        " has been eliminated. You take the rest of the day to rest and recover gaining 200hp"
     );
     findItem(sportDrink);
     console.log(
-      "Look, at that " +
+      "AS you plunge your sword into its heart the " +
         newEncounter.enemy +
-        " died and dropped this item for you, you earned a sports drink worth 200hp!" +
+        " dies and drops an item for you, its an elixer worth 200hp" +
         sportDrink.item
     );
   }
@@ -199,7 +220,7 @@ function firstFight(newEncounter) {
 function enemyAttack(newEncounter) {
   newPlayer.reduceHP(Math.floor(Math.random() * newEncounter.ap));
   console.log(
-    "Ouch, Your Taking Damage" +
+    "Your Taking Damage " +
       newEncounter.enemy +
       " hp remaining: " +
       newPlayer.hp
@@ -208,7 +229,7 @@ function enemyAttack(newEncounter) {
 function playerAttack(newEncounter) {
   newEncounter.reduceHP(Math.floor(Math.random() * newPlayer.ap + 50));
   console.log(
-    "You are showing off now " +
+    "You swing your sword and wound the " +
       newEncounter.enemy +
       " HP remaining: " +
       newEncounter.hp
@@ -241,11 +262,13 @@ while (newPlayer.isAlive()) {
     }
   } else {
     console.log(
-      "Thanks for your help, we knocked out all those delicious treats/ enemies!!"
+      "You make it to the town all enemies were defeated!!"
     );
     break;
   }
 }
+
+
 
 
 
