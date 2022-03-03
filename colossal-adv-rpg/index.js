@@ -1,7 +1,7 @@
 var readlineSync = require("readline-sync");
 
 var divdr =
-  "--------------------------------------------------------------------"
+  "--------------------------------------------------------------------";
 
 class Player {
   constructor(player, hp, ap) {
@@ -77,17 +77,7 @@ const orc = new Enemies("Orc", 110, 160);
 const harpy = new Enemies("Harpy", 150, 200);
 const lesserKnight = new Enemies("Lesser Knight", 220, 270);
 const greaterKnight = new Enemies("Greater Knight", 270, 325);
-let enemies = [
-  goblin,
-  orc,
-  harpy,
-  lesserKnight,
-  greaterKnight,
-];
-
-
-
-
+let enemies = [goblin, orc, harpy, lesserKnight, greaterKnight];
 
 console.log("Welcome adventurer to Adventure RPG! ");
 
@@ -102,49 +92,14 @@ console.log(
 
 console.log(divdr);
 
-function operatorChoice() {
-  var readLineSync = require("readline-sync");
-    
-  let operator = readLineSync.question(
-    `Would you like to play? Enter "Y" or "N": `
-  );
-  switch (operator) {
-    case "Y":
-      console.log(divdr);
-      console.log(
-        "You awaken in the middle of a subtle field. The soon is high in the noon. As you look around you see some coming from the west."
-      );
-
-      return operator;
-    case "y":
-      console.log(divdr);
-      console.log(
-        "You awaken in the middle of a subtle field. The soon is high in the noon. As you look around you see some coming from the west."
-      );
-
-      return operator;
-    case "N":
-      console.log(divdr);
-      console.log("Try the game sometime soon!");
-
-      return operator;
-    case "n":
-      console.log(divdr);
-      console.log("Try the game sometime soon!");
-
-      return operator;
-    default:
-      console.log("You must input 'Y' or 'N' !");
-  }
-}
 
 function walk() {
-    const odds = Math.random();
-    if (odds > .5) {
-        console.log('You move closer to the town.. no monsters are around.');
-    } else {
-        enemyEncounter()
-    }
+  const odds = Math.random();
+  if (odds > 0.5) {
+    console.log("You move closer to the town.. no monsters are around.");
+  } else {
+    enemyEncounter();
+  }
 }
 
 function enemyEncounter() {
@@ -220,7 +175,7 @@ function firstFight(newEncounter) {
     );
   }
 }
-/* Take damage with enemy strike attack hp */
+
 function enemyAttack(newEncounter) {
   newPlayer.reduceHP(Math.floor(Math.random() * newEncounter.ap));
   console.log(
@@ -265,15 +220,8 @@ while (newPlayer.isAlive()) {
       break;
     }
   } else {
-    console.log(
-      "You make it to the town all enemies were defeated!!"
-    );
+    console.log("You make it to the town all enemies were defeated!!");
     break;
   }
 }
 
-
-
-
-
-operatorChoice();
