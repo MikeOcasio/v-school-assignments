@@ -111,7 +111,7 @@ function enemyEncounter() {
     );
     let end = readlineSync.keyIn("[q] for quit", { limit: "q" });
     if (end === "q") {
-      process.end;
+      process.exit;
     }
   } else {
     let newEncounter = enemies[Math.floor(Math.random() * enemies.length)];
@@ -150,7 +150,7 @@ function firstFight(newEncounter) {
       console.log(
         "You lay down your arms and look up to the sky. The regret of quitting eventually over takes you.. You long for battle once more, you should try again."
       );
-      process.end;
+      process.exit;
     }
   }
   if (newPlayer.hp == 0) {
@@ -216,11 +216,12 @@ while (newPlayer.isAlive()) {
   } else if (commands == "q") {
     if (enemies.length > 0) {
       console.log("You quit without defeating all the enemies");
-      process.end;
+      process.exit;
       break;
     }
   } else {
     console.log("You make it to the town all enemies were defeated!!");
+    process.exit;
     break;
   }
 }
