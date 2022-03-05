@@ -111,7 +111,7 @@ function enemyEncounter() {
     );
     let end = readlineSync.keyIn("[q] for quit", { limit: "q" });
     if (end === "q") {
-      process.exit;
+      process.exit();
     }
   } else {
     let newEncounter = enemies[Math.floor(Math.random() * enemies.length)];
@@ -212,7 +212,7 @@ while (newPlayer.isAlive()) {
   } else if (commands == "i") {
     showInventory();
   } else if (commands == "u") {
-    useItem(sportDrink);
+    useItem(elixir);
   } else if (commands == "q") {
     if (enemies.length > 0) {
       console.log("You quit without defeating all the enemies");
