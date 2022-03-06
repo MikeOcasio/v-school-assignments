@@ -106,8 +106,10 @@ function enemyEncounter() {
   if (enemies.length == 0) {
     console.log(
       "You did it! You eliminated all the monsters....killing a total of " +
-        newPlayer.playerName +
+        +
         newPlayer.enemyKilled
+        +
+        " Enemies killed."
     );
     let end = readlineSync.keyIn("[q] for quit", { limit: "q" });
     if (end === "q") {
