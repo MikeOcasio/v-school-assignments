@@ -9,6 +9,6 @@ for (let i = 0; i <= 100; i++) {
     //all numbers that are only divisible by 5 and not 3, result="Buzz"
   } else if (i % 5 == 0) {
     console.log((output += "Buzz"));
-    //else is a catch all for all reamaing numbers that are not divisible by 5 or 3 in which case we print the number in that index.
+    //else is a catch all for all remaining numbers that are not divisible by 5 or 3 in which case we print the number in that index.
   } else console.log((output = i));
 };
