@@ -23,6 +23,17 @@ class Player {
   }
 }
 
+console.log("Welcome adventurer to Adventure RPG! ");
+
+console.log(divdr);
+
+var playerName = readlineSync.question("What is your name? ");
+console.log(
+  "Hey there, " +
+    playerName +
+    " the goal of the game is to kill all the monsters and you reach the town."
+);
+
 const newPlayer = new Player(playerName, 400, 325);
 
 class Inventory {
@@ -79,16 +90,7 @@ const lesserKnight = new Enemies("Lesser Knight", 220, 270);
 const greaterKnight = new Enemies("Greater Knight", 270, 325);
 let enemies = [goblin, orc, harpy, lesserKnight, greaterKnight];
 
-console.log("Welcome adventurer to Adventure RPG! ");
 
-console.log(divdr);
-
-var playerName = readlineSync.question("What is your name? ");
-console.log(
-  "Hey there, " +
-    playerName +
-    " the goal of the game is to kill all the monsters and you reach the town."
-);
 
 console.log(divdr);
 
