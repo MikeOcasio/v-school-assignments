@@ -1,21 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
+    <title>Simple Calculator</title>
 
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-
-
-
-
-
+    <form name="smplCalculator">
+        <!-- First Section: Input Values to be added -->
+        <div id="add">
+            <input placeholder="Type A Number" type="number" name="num1">
+            <input placeholder="Type A Number" type="number" name="num2">
+            <button id="addResult" class="add">Addition</button>
+        </div>
+        <!-- Second Section: Input Values to be subtracted -->
+        <div id="sub">
+            <input placeholder="Type A Number" type="number" name="num3">
+            <input placeholder="Type A Number" type="number" name="num4">
+            <button id="subResult" class="sub">Subtraction</button>
+        </div>
+        <!--Third Section: Input Values to Multiply -->
+        <div id="mul">
+            <input placeholder="Type A Number" type="number" name="num5">
+            <input placeholder="Type A Number" type="number" name="num6">
+            <button id='multiResult' class="multi">Multiplication</button>
+        </div>
+        <div id="results">
+            <h1 class="resultsHeading">🔽Results🔽</h1>
+            <ul>
+                <li id="add" class="addCol"></li>
+                <li id="subtract" class="subCol"></li>
+                <li id='multiply' class="multiCol"></li>
+            </ul>
+        </div>
+    </form>
+    <script src="index.js"></script>
 </body>
 
-<script src="index.js"></script>
+</html>
+
+<script type="text/javascript" src="index.js"></script>
 </html>

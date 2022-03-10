@@ -1,0 +1,17 @@
+#body {
+
+   display: flex;
+    flex-direction: column;
+    background-image: linear-gradient(royalblue, peachpuff);
+    background-repeat: no-repeat;
+    height: 100vh;
+    align-items: center;
+
+}
+
+.style {
+
+    font-family: sans-serif;
+    color: white;
+
+}
