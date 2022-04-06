@@ -53,11 +53,8 @@ console.log(
 /* Make an array of strings of the names saying whether or not they can go to the Matrix */
 
 function makeStrings(arr) {
-  return arr.map(function (person) {
-    if (person.age > 18)
-      return `${person.name} is an adult they can enter the Matrix `;
-    else return `${person.name} is under age, too young to enter the Matrix`;
-  });
+  return arr.map((person) => person.age > 18 ? `${person.name} is an adult they can enter the Matrix `
+    : `${person.name} is under age, too young to enter the Matrix`);
 }
 
 console.log(
@@ -84,6 +81,7 @@ console.log(
     },
   ])
 );
+
 // ["Angelina Jolie can go to The Matrix",
 // "Eric Jones is under age!!",
 // "Paris Hilton is under age!!",
