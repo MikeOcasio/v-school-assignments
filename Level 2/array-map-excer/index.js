@@ -1,24 +1,19 @@
 function doubleNumbers(arr) {
-  return arr.map(function (num) {
-    return num * 2;
-  });
+  return arr.map(num => num * 2);
 }
 console.log(doubleNumbers([2, 5, 100])); // [4, 10, 200]
 
 /* Take an array of numbers and make them strings */
 function stringItUp(arr) {
-  return arr.map(function (num) {
-    return num.toString();
-  });
+  return arr.map(num => num.toString());
 }
 
 console.log(stringItUp([2, 5, 100])); // ["2", "5", "100"]
 
 /* Capitalize each of an array of names */
 function capitalizeNames(arr) {
-  return arr.map(function (name) {
-    return name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
-  });
+  return arr.map(name => name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
+);
 }
 
 console.log(capitalizeNames(["john", "JACOB", "jinGleHeimer", "schmidt"])); // ["John", "Jacob", "Jingleheimer", "Schmidt"]
@@ -26,9 +21,7 @@ console.log(capitalizeNames(["john", "JACOB", "jinGleHeimer", "schmidt"])); // [
 /* Make an array of strings of the names */
 
 function namesOnly(arr) {
-  return arr.map(function (object) {
-    return object.name;
-  });
+  return arr.map(object => object.name);
 }
 
 console.log(
@@ -99,10 +92,10 @@ console.log(
 
 /* Make an array of the names in h1s, and the ages in h2s */
 function readyToPutInTheDOM(arr) {
-  return arr.map(function (person) {
-    return `<h1>${person.name}</h1> <h2>${person.age}</h2>`;
-  });
+  return arr.map(person => `<h1>${person.name}</h1> <h2>${person.age}</h2>`);
 }
+
+
 console.log(
   readyToPutInTheDOM([
     {
