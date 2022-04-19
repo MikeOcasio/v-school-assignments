@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'verdemoderna';
+  src: url("../fonts/verdemoderna.woff") format('woff');
+}
+h1 {
+    font-family: 'Julius Sans One', sans-serif;
+}
+
+body {
+    
+    font-family: 'Libre Baskerville', sans-serif;
+}
+
+.bg-huntington {
+    background-image: url("../images/gridlines-opaque.png"), url("../images/huntington.jpeg");
+}
+
+.bg-huntington::before {
+    opacity: 0.5;
+    background-color: black;
+    content: " ";
+    width: 100%;
+    display: block;
+    height: 10px;
+}
+
+.bg-darker {
+
+    background-color: rgba(0,0,0, 0.10);
+    
+}
+
+.verdemoderna {
+
+    font-family: verdemoderna;
+    font-size: 75px;
+}
