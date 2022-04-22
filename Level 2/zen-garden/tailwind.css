@@ -19,6 +19,10 @@ body {
     background-image: url("../images/gridlines-opaque.png"), url("../images/huntington.jpeg");
 }
 
+.bg-contours {
+    background-image: url("../images/gridlines-opaque.png"), url("../images/koi.png"),;
+}
+
 .bg-huntington::before {
     opacity: 0.5;
     background-color: black;
@@ -38,4 +42,28 @@ body {
 
     font-family: verdemoderna;
     font-size: 75px;
+}
+
+.bg-sage {
+
+    background-color: rgba(229,237,232,255);
+}
+
+.bg-darksage {
+
+    background-color: rgba(20,67,71,255);
+}
+
+.parallax {
+  /* The image used */
+  background-image: url("../images/contours-opaque.png");
+
+  /* Set a specific height */
+  min-height: 100vh;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
