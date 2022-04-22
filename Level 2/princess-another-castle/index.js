@@ -13,12 +13,6 @@ class Player {
     this.hasStar = hasStar;
   }
 
-  /* set which player is playing */
-  setName(namePicked) {
-    console.log(`Name Picked: ${namePicked}`);
-    this.name = namePicked;
-  }
-
   /* Take Damage- gotHit */
   gotHit() {
     if (this.hasStar) {
@@ -60,9 +54,8 @@ class Player {
   }
 }
 
-let player = new Player(0, "Big", false);
-player.setName("Mario");
-// player.setName("Luigi");
+let player = new Player("Mario", "Big", 0, false);
+
 
 let runTime = setInterval(() => {
   player.print();
