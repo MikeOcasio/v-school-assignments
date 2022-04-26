@@ -2,16 +2,17 @@
     "Deli-menu": {
         "appetizers": [
             {
-                "name": "Dinner Salad",
+                "name": "Ceasar Salad",
                 "ingredients": [
                     "lettuce",
                     "tomatoes",
                     "carrots",
                     "cucumber",
                     "dressing",
-                    "baconBits"
+                    "croutons",
+                    "shreded cheese"
                 ],
-                "description": "Hand tossed dinner salad"
+                "description": "Julius Ceasar would envy this salad."
             },
             {
                 "name": "Loaded Potatoes",
@@ -23,16 +24,16 @@
                     "sourCream",
                     "cheese"
                 ],
-                "description": "Baked to perfection, topped with your choice of extras...."
+                "description": "Baked to perfection, add whatever you like"
             },
             {
-                "name": "Hot Wings",
+                "name": " BBQ Wings",
                 "ingredients": [
                     "2lbs chicken wings",
-                    "FranksRedHot",
+                    "BBQ Saucse",
                     "carrot sticks"
                 ],
-                "description": "Get a side of ranch and a roll of paper towels"
+                "description": "Get a side of ranch these wings will be juicy!"
             }
         ],
         "coldSandwiches": [
@@ -45,7 +46,7 @@
                     "pepperoni",
                     "yourChoiceOfToppings"
                 ],
-                "description": "Cold is not generally toasted but Have it Your Way..."
+                "description": "We have the meats..."
             },
             {
                 "name": "TunaSalad",
@@ -55,7 +56,7 @@
                     "potato Chips",
                     "pickle-mayo-mustard blend"
                 ],
-                "description": "You will get all the cats in the neighborhood interested in your sandwich"
+                "description": "A sandwhich with tuno one the inside... yum"
             },
             {
                 "name": "Ham & Turkey",
@@ -66,7 +67,7 @@
                     "hot peppers",
                     "houseChips"
                 ],
-                "description": "Managers special"
+                "description": "Simple, delicous, all the good, and none of the bad"
             }
         ],
         "hotSandwiches": [
@@ -79,7 +80,7 @@
                     "parmesan cheese",
                     "frenchOnions"
                 ],
-                "description": "That's A Spicy meatball"
+                "description": "Cheesy gooey and full of meatballs"
             },
             {
                 "name": "Calzone",
@@ -90,10 +91,10 @@
                     "mozzarella cheese",
                     "buttered crust"
                 ],
-                "description": "Pizza Sandwich"
+                "description": "Pizza in a pocket which makes it convinient and delicious"
             },
             {
-                "name": "TunaMeltNSoup",
+                "name": "Tuna Soup Melt",
                 "ingredients": [
                     "4oz ChickenOf Sea",
                     "whole wheat bread",
@@ -112,16 +113,16 @@
                     " sugar",
                     "flour"
                 ],
-                "description": "Nice warm apple pie, limit one slice per customer... very popular"
+                "description": "An apple pie made only from the freshest apples found in the fanciest of places"
             },
             {
-                "name": "Cookies With Sprinkles",
+                "name": "Sugar Cookiess",
                 "ingredients": [
-                    "chocolate frosting",
-                    "sprinkles",
+                    "sugar",
+                    "brown sugar",
                     "cookie dough"
                 ],
-                "description": "Freshly Baked Cookies Just like grandmas house"
+                "description": "These cookiers will put your grandmas' to shame"
             },
             {
                 "name": "Ice Cream",
@@ -132,7 +133,7 @@
                     "Mint Chocolate Chip",
                     "Chocolate Chip Cookie Dough"
                 ],
-                "description": "add a scoop of ice cream to your apple pie..."
+                "description": "Get it in a cone, a cup, on your cookies, even with your apple pie"
             }
         ],
         "drinks": [
@@ -144,7 +145,7 @@
                     "MTNDEW",
                     "Orange"
                 ],
-                "description": "Double gulps huh? Well see ya later......"
+                "description": "The fizzy drinks of your dreams"
             },
             {
                 "name": "Beer",
@@ -154,7 +155,7 @@
                     "IPA",
                     "Dark"
                 ],
-                "description": "Nice cold beer here, cans backyard style!"
+                "description": "Fresh beer from the Kegs, Bottoms up!"
             },
             {
                 "name": "Coffee",
@@ -163,7 +164,7 @@
                     "creamer",
                     "sugar"
                 ],
-                "description": "Hot and fresh morning brew"
+                "description": "Cofee fresh and crisp, locally grounded"
             },
             {
                 "name": "Tea",
@@ -173,7 +174,7 @@
                     "Lemon Zing",
                     "FrenchBlend"
                 ],
-                "description": "Tea Bagger"
+                "description": "Plenty of tea for those of class"
             }
         ]
     }
