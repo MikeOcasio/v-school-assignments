@@ -11,7 +11,7 @@ class Player {
     this.totalCoins = totalCoins;
     this.gameActive = gameActive;
     this.hasStar = hasStar;
-  }
+  }ø
 
   /* Take Damage- gotHit */
   gotHit() {
